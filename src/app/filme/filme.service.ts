@@ -1,12 +1,16 @@
+import { CRUDfilmes_API } from './../app.api';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Filme } from './filme.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class FilmeService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  
+  getFilme(): Observable<Filme[]>{
+    return this.http.get<Filme[]>(`${CRUDfilmes_API}/filme`)
+  }
 
 }
