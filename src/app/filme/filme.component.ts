@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Filme } from './filme.model';
+import { FilmeService } from './filme.service';
 
 @Component({
   selector: 'app-filme',
@@ -10,7 +11,7 @@ export class FilmeComponent implements OnInit {
 
   Filme: Filme
 
-  constructor() { }
+  constructor(private filmeService: FilmeService) { }
 
   ngOnInit(): void {
   }
