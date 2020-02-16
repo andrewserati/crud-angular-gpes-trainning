@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, PreloadAllModules} from "@angular/router"
 import { HttpModule } from "@angular/http"
 import { HttpClientModule } from "@angular/common/http"
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { FilmeComponent } from './filme/filme.component';
@@ -18,7 +21,10 @@ import { HomeComponent } from './home/home.component'
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
