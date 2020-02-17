@@ -9,13 +9,14 @@ import { FilmeService } from './filme.service';
 })
 export class FilmeComponent implements OnInit {
 
-  Filme: Filme
+  Filme: Filme[]
 
   constructor(private filmeService: FilmeService) { }
 
   ngOnInit(): void {
     this.filmeService.getFilme().subscribe(res => {
       console.log(res)
+      this.Filme = res['data']
     })
   }
 
