@@ -14,7 +14,7 @@ export class FilmeComponent implements OnInit {
   constructor(private filmeService: FilmeService) { }
 
   ngOnInit(): void {
-    this.filmeService.getFilme().subscribe(res => {
+    this.filmeService.getFilmes().subscribe(res => {
       console.log(res)
       this.Filme = res['data']
     })

@@ -9,8 +9,12 @@ export class FilmeService {
 
   constructor(private http: HttpClient) { }
 
-  getFilme(): Observable<Filme[]>{
+  getFilmes(): Observable<Filme[]>{
     return this.http.get<Filme[]>(`${CRUDfilmes_API}/filme`)
+  }
+
+  getFilme(id: number): Observable<Filme> {
+    return this.http.get<Filme>(`${CRUDfilmes_API}/filme/${id}`)
   }
 
 }
