@@ -13,7 +13,7 @@ export class FilmeService {
     return this.http.get<Filme[]>(`${CRUDfilmes_API}/filme`)
   }
 
-  getFilme(id: number): Observable<Filme> {
+  getFilme(id): Observable<Filme> {
     return this.http.get<Filme>(`${CRUDfilmes_API}/filme/${id}`)
   }
 
@@ -21,8 +21,8 @@ export class FilmeService {
     return this.http.post<Filme>(`${CRUDfilmes_API}/filme`, filme)
   }
 
-  //updateFilme(id, filme): Observable<Filme> {
-    //return this.htt
-  //}
+  updateFilme(id, filme): Observable<Filme> {
+    return this.http.put<Filme>(`${CRUDfilmes_API}/filme/${id}`, filme)
+  }
 
 }
