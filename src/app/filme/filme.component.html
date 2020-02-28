@@ -30,21 +30,32 @@
         </tbody>
     </table>
 
-    <form>
+    <form [formGroup]="filmeForm" (ngSubmit)="addFilme(filmeForm.value)">
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <label for="txt-nome-filme">Nome do Filme</label>
+            <input name="nome_filme" formControlName="nome_filme" type="text" class="form-control" id="txt-nome-filme">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="txt-descricao-filme">Descrição do Filme</label>
+            <input name="descricao_filme" formControlName="descricao_filme" type="text" class="form-control"
+                id="txt-descricao-filme">
         </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <div class="form-group">
+            <label for="txt-duracao-filme">Duração do Filme</label>
+            <input name="duracao_filme" formControlName="duracao_filme" type="text" class="form-control"
+                id="txt-duracao-filme">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        <div class="form-group">
+            <label for="txt-diretor-filme">Diretor do Filme</label>
+            <input name="diretor_filme" formControlName="diretor_filme" type="text" class="form-control"
+                id="txt-diretor-filme">
+        </div>
+        <div class="form-group">
+            <label for="txt-genero-filme">Gênero do Filme</label>
+            <input name="genero_filme" formControlName="genero_filme" type="text" class="form-control"
+                id="txt-genero-filme">
+        </div>
+        <button type="submit" [disabled]="!filmeForm.valid" class="btn btn-primary">Submit</button>
+    </form>
 
 </div>

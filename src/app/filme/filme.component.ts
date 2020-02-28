@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 export class FilmeComponent implements OnInit {
 
   Filme: Filme[];
-  productForm: FormGroup;
+  filmeForm: FormGroup;
 
   constructor(private filmeService: FilmeService, private router: Router, private formBuilder: FormBuilder) { }
 
@@ -22,19 +22,20 @@ export class FilmeComponent implements OnInit {
       this.Filme = res['data']
     })
 
-    this.productForm = this.formBuilder.group({
-      'nome_filme': [null, Validators.required, Validators.maxLength(100)],
+    this.filmeForm = this.formBuilder.group({
+      'nome_filme': [null, [Validators.required, Validators.maxLength(100)]],
       'descricao_filme': [null, Validators.maxLength(300)],
-      'duracao_filme': [null, Validators.required, Validators.maxLength(20)],
-      'diretor_filme': [null, Validators.required, Validators.maxLength(100)],
-      'genero_filme': [null, Validators.required, Validators.maxLength(50)]
+      'duracao_filme': [null, [Validators.required, Validators.maxLength(20)]],
+      'diretor_filme': [null, [Validators.required, Validators.maxLength(100)]],
+      'genero_filme': [null, [Validators.required, Validators.maxLength(50)]]
     })
 
   }
 
   addFilme(form: NgForm) {
     this.filmeService.addFilme(form).subscribe(res => {
-      this.Filme = res['data']
+      //this.Filme = res['data']
+      this.router.navigate(['/filme', res['_id']])
     })
   }
 

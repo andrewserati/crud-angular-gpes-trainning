@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component'
 import { FilmeService } from './filme/filme.service';
 
 import { ROUTES } from "./app.routing";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { ROUTES } from "./app.routing";
     RouterModule.forRoot(ROUTES),
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [FilmeService],
   bootstrap: [AppComponent]
