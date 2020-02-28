@@ -21,8 +21,13 @@ export class FilmeService {
     return this.http.post<Filme>(`${CRUDfilmes_API}/filme`, filme)
   }
 
-  updateFilme(id, filme): Observable<Filme> {
+  updateFilme(id, filme): Observable<any> {
     return this.http.put<Filme>(`${CRUDfilmes_API}/filme/${id}`, filme)
   }
+
+  deleteFilme(id): Observable<Filme> {
+    return this.http.delete<Filme>(`${CRUDfilmes_API}/filme/${id}`)
+  }
+
 
 }
