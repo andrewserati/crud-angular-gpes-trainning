@@ -33,26 +33,26 @@
     <form [formGroup]="filmeForm" (ngSubmit)="addFilme(filmeForm.value)">
         <div class="form-group">
             <label for="txt-nome-filme">Nome do Filme</label>
-            <input name="nome_filme" formControlName="nome_filme" type="text" class="form-control" id="txt-nome-filme">
+            <input name="nome" formControlName="nome" type="text" class="form-control" id="txt-nome-filme">
         </div>
         <div class="form-group">
             <label for="txt-descricao-filme">Descrição do Filme</label>
-            <input name="descricao_filme" formControlName="descricao_filme" type="text" class="form-control"
+            <input name="descricao" formControlName="descricao" type="text" class="form-control"
                 id="txt-descricao-filme">
         </div>
         <div class="form-group">
             <label for="txt-duracao-filme">Duração do Filme</label>
-            <input name="duracao_filme" formControlName="duracao_filme" type="text" class="form-control"
+            <input name="duracao" formControlName="duracao" type="text" class="form-control"
                 id="txt-duracao-filme">
         </div>
         <div class="form-group">
             <label for="txt-diretor-filme">Diretor do Filme</label>
-            <input name="diretor_filme" formControlName="diretor_filme" type="text" class="form-control"
+            <input name="diretor" formControlName="diretor" type="text" class="form-control"
                 id="txt-diretor-filme">
         </div>
         <div class="form-group">
             <label for="txt-genero-filme">Gênero do Filme</label>
-            <input name="genero_filme" formControlName="genero_filme" type="text" class="form-control"
+            <input name="genero" formControlName="genero" type="text" class="form-control"
                 id="txt-genero-filme">
         </div>
         <button type="submit" [disabled]="!filmeForm.valid" class="btn btn-primary">Submit</button>

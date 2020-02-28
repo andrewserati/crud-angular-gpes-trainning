@@ -23,19 +23,18 @@ export class FilmeComponent implements OnInit {
     })
 
     this.filmeForm = this.formBuilder.group({
-      'nome_filme': [null, [Validators.required, Validators.maxLength(100)]],
-      'descricao_filme': [null, Validators.maxLength(300)],
-      'duracao_filme': [null, [Validators.required, Validators.maxLength(20)]],
-      'diretor_filme': [null, [Validators.required, Validators.maxLength(100)]],
-      'genero_filme': [null, [Validators.required, Validators.maxLength(50)]]
+      'nome': [null, [Validators.required, Validators.maxLength(100)]],
+      'descricao': [null, Validators.maxLength(300)],
+      'duracao': [null, [Validators.required, Validators.maxLength(20)]],
+      'diretor': [null, [Validators.required, Validators.maxLength(100)]],
+      'genero': [null, [Validators.required, Validators.maxLength(50)]]
     })
 
   }
 
   addFilme(form: NgForm) {
     this.filmeService.addFilme(form).subscribe(res => {
-      //this.Filme = res['data']
-      this.router.navigate(['/filme', res['_id']])
+      console.log(res)
     })
   }
 
