@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Filme } from './filme.model';
 import { FilmeService } from './filme.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-filme',
