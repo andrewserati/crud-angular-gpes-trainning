@@ -48,7 +48,8 @@ export class FilmeComponent implements OnInit {
   getFilme(id) {
     this.filmeService.getFilme(id).subscribe(response => {
       console.log(response)
-      this._id = ['data']['_id'];
+      //this._id = ['data']['_id'];
+      this._id = response._id
       this.filmeForm.patchValue({
         _id: response['data']['_id'],
         nome: response['data']['nome'],
@@ -57,14 +58,12 @@ export class FilmeComponent implements OnInit {
         diretor: response['data']['diretor'],
         genero: response['data']['genero']
       })
+      console.log(this._id)
     })
   }
 
-  gerenciarMethod() {
-
-  }
-
   updateFilme(form: NgForm) {
+    console.log(this._id)
     this.filmeService.updateFilme(this._id, form).subscribe(res => {
       console.log(res)
     })
@@ -72,6 +71,12 @@ export class FilmeComponent implements OnInit {
 
   addFilme(form: NgForm) {
     this.filmeService.addFilme(form).subscribe(res => {
+      console.log(res)
+    })
+  }
+
+  deleteFilme(id) {
+    this.filmeService.deleteFilme(id).subscribe(res => {
       console.log(res)
     })
   }

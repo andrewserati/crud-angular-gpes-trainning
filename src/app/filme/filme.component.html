@@ -23,7 +23,7 @@
                 <td>
                     <div class="btn-group" role="group">
                         <button (click)="getFilme(filme._id)" type="button" class="btn btn-warning btn-sm">Editar</button>
-                        <button type="button" class="btn btn-danger btn-sm">Deletar</button>
+                        <button (click)="deleteFilme(filme._id)" type="button" class="btn btn-danger btn-sm">Deletar</button>
                     </div>
                 </td>
             </tr>
@@ -31,7 +31,7 @@
     </table>
 
     <!-- a função de ngSubmit será trocada ainda -->
-    <form [formGroup]="filmeForm" (ngSubmit)="addFilme(filmeForm.value)">
+    <form [formGroup]="filmeForm" (ngSubmit)="updateFilme(filmeForm.value)">
         <div class="form-group">
             <label for="txt-id-filme">ID do Filme</label>
             <input name="_id" formControlName="_id" type="text" class="form-control" id="txt-id-filme" readonly>
