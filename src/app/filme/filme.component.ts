@@ -60,17 +60,18 @@ export class FilmeComponent implements OnInit {
     })
   }
 
-  updateFilme(form: NgForm) {
-    console.log(this._id)
-    this.filmeService.updateFilme(this._id, form).subscribe(res => {
-      console.log(res)
-    })
-  }
+  gerenciarVerbo(form: NgForm, id) {
+    id = this._id
+    if (id == '') {
+      this.filmeService.addFilme(form).subscribe(res => {
+        console.log(res)
+      })
+    } else {
+      this.filmeService.updateFilme(id, form).subscribe(res => {
+        console.log(res)
+      })
+    }
 
-  addFilme(form: NgForm) {
-    this.filmeService.addFilme(form).subscribe(res => {
-      console.log(res)
-    })
   }
 
   deleteFilme(id) {
