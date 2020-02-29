@@ -11,8 +11,16 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 })
 export class FilmeComponent implements OnInit {
 
+  _id: String = '';
+  nome: String = '';
+  descricao: String = '';
+  duracao: String = '';
+  diretor: String = '';
+  genero: String = '';
+
   Filme: Filme[];
   filmeForm: FormGroup;
+  filmeForm2: FormGroup;
 
   constructor(private filmeService: FilmeService, private router: Router, private formBuilder: FormBuilder) { }
 
