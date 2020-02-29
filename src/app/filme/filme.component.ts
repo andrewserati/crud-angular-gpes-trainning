@@ -48,8 +48,7 @@ export class FilmeComponent implements OnInit {
   getFilme(id) {
     this.filmeService.getFilme(id).subscribe(response => {
       console.log(response)
-      //this._id = ['data']['_id'];
-      this._id = response._id
+      this._id = id
       this.filmeForm.patchValue({
         _id: response['data']['_id'],
         nome: response['data']['nome'],
@@ -58,7 +57,6 @@ export class FilmeComponent implements OnInit {
         diretor: response['data']['diretor'],
         genero: response['data']['genero']
       })
-      console.log(this._id)
     })
   }
 
