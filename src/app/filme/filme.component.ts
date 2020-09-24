@@ -45,7 +45,7 @@ export class FilmeComponent implements OnInit {
 
   }
 
-  getFilme(id) {
+  getFilme(id): void {
     this.filmeService.getFilme(id).subscribe(response => {
       console.log(response)
       this._id = id
@@ -60,7 +60,7 @@ export class FilmeComponent implements OnInit {
     })
   }
 
-  gerenciarVerbo(form: NgForm, id) {
+  gerenciarVerbo(form: NgForm, id: string): void {
     id = this._id
     if (id == '') {
       this.filmeService.addFilme(form).subscribe(res => {
@@ -74,7 +74,7 @@ export class FilmeComponent implements OnInit {
 
   }
 
-  deleteFilme(id) {
+  deleteFilme(id: string): void {
     this.filmeService.deleteFilme(id).subscribe(res => {
       console.log(res)
     })
